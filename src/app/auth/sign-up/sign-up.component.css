@@ -1,0 +1,48 @@
+.register {
+   margin-top: 3%;
+   border-style: solid;
+   border-color: #ff4c68;
+   border-width: 10px;
+  }
+  .btnLogin{
+    float: right;
+    margin-top: 10%;
+    border: solid;
+    border-radius: 0.5rem;
+    padding: 2%;
+    background: #1a1b1b;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+  }
+  .register-right {
+    background: #f3eff0;
+  }
+
+  .register .register-form {
+    padding: 10%;
+    margin-top: 10%;
+  }
+  .btnRegister {
+    float: right;
+    margin-top: 10%;
+    border: solid;
+    border-radius: 0.5rem;
+    padding: 2%;
+    background: #1f2020;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+  }
+
+  .register-heading {
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+  }
+  .footerBg{
+    background-color: #ff4c68;
+  }

@@ -1,0 +1,84 @@
+<div class="pageBody">
+  <nav class="navbar navbar-expand navbar-dark navBg">
+  <a class="navbar-brand" routerLink="/home">Home</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarsExample02"
+    aria-controls="navbarsExample02"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"></li>
+    </ul>
+    <form class="form-inline my-2 my-md-0">
+      <button
+        class="btn btn-outline-light"
+        type="submit"
+        routerLink="/wish-list"
+      >
+        <i class="bi-cart-fill me-1"></i>
+        Wish-List
+      </button>
+    </form>
+  </div>
+</nav>
+<!-- Section-->
+<section class="px-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let book of books">
+        <div class="card mt-5 cardBg">
+          <img
+            class="card-img-top"
+            [src]="book.imageLink"
+            style="height: 300px; width: 100%"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h4 class="card-title text-center font-weight-bold">
+              {{ book.title }}
+            </h4>
+            <p class="card-text text-center">Authour : {{ book.author }}</p>
+            <p class="text-center">Language : {{ book.language }}</p>
+            <p class="text-center">Year of Published : {{ book.year }}</p>
+            <p class="text-center">No of Pages : {{ book.pages }}</p>
+            <p class="text-center">Country : {{ book.country }}</p>
+            <p class="text-center"> Book Link : <a href="{{ book.link }}" target="_blank">{{ book.link }}</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section -->
+<section class="py-5" *ngIf="countCompletedList == 0">
+  <div class="container px-4 px-lg-5 mt-5 h-100">
+    <div
+      class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+    >
+      <div class="col mb-5">
+        <div class="card h-100 p-5 text-center">
+          <!-- Product image-->
+          <h2>Add book to your Complete-List</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br><br><br><br><br><br><br><br>
+</div>
+<!-- Footer-->
+<footer class="py-4 footerBg">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; Abhishek Kumar ---- MEAN 2022</p>
+  </div>
+</footer>
+

@@ -1,0 +1,104 @@
+<div class="pageBody">
+  <nav class="navbar navbar-expand navbar-dark navBg">
+    <a class="navbar-brand" routerLink="/home">Welcome to Magic of Books</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarsExample02"
+      aria-controls="navbarsExample02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/completed-list" *ngIf="isUserActive"
+            >Complete books</a
+          >
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0" *ngIf="isUserActive">
+        <button
+          class="btn btn-outline-light"
+          type="submit"
+          routerLink="/wish-list"
+        >
+          <i class="bi-cart-fill me-1"></i>
+          Wish-List
+          <span class="badge bg-light text-dark ms-1 rounded-pill">{{
+            countWishList
+          }}</span>
+        </button>
+      </form>
+      <form class="form-inline my-2 my-md-0" *ngIf="isUserActive">
+        <button class="btn btn-outline-light mr-md-2 ml-md-2" (click)="logout()">
+          <i class="bi-cart-fill me-1"></i>
+          Logout
+        </button>
+      </form>
+      <form class="form-inline my-2 my-md-0" *ngIf="!isUserActive">
+        <button class="btn btn-outline-light" routerLink="/login" type="submit">
+          <i class="bi-cart-fill me-1"></i>
+          Login
+        </button>
+      </form>
+    </div>
+  </nav>
+<!-- Section-->
+<section class="px-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let book of books">
+        <div class="card mt-5 cardBg">
+          <img
+            class="card-img-top"
+            [src]="book.imageLink"
+            style="height: 300px; width: 100%"
+            alt="Card image cap"
+          />
+
+          <div class="card-body">
+            <h4 class="card-title text-center font-weight-bold">
+              {{ book.title }}
+            </h4>
+            <p class="card-text text-center">Authour : {{ book.author }}</p>
+            <p class="text-center">Language : {{ book.language }}</p>
+            <p class="text-center">Year of Published : {{ book.year }}</p>
+            <p class="text-center">No of Pages : {{ book.pages }}</p>
+            <p class="text-center">Country : {{ book.country }}</p>
+            <p class="text-center"> Book Link : <a href="{{ book.link }}" target="_blank">{{ book.link }}</a> </p>
+            <button
+              type="button"
+              class="btn btn-dark btn btn-block"
+              (click)="addtoWishList(this.book.id)"
+            >
+
+              Add to wishlist
+            </button>
+            <button
+              type="button"
+              class="btn btn-dark btn-block btnBg"
+              (click)="addToComplete(this.book.id)"
+            >
+              Add to complete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- Footer-->
+<footer class="py-4 footerBg">
+  <div class="container">
+    <p class="m-0 text-center text-white">
+      Copyright &copy; Abhishek Kumar ---- MEAN
+    </p>
+  </div>
+</footer>
